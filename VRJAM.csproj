@@ -181,6 +181,8 @@
     <Compile Include="Assets\External Assets\SteamVR\Scripts\SteamVR_UpdatePoses.cs" />
     <Compile Include="Assets\External Assets\SteamVR\Scripts\SteamVR_Utils.cs" />
     <Compile Include="Assets\Scripts\ChickenAcceleration.cs" />
+    <Compile Include="Assets\Scripts\LegacyAnimator.cs" />
+    <Compile Include="Assets\Scripts\ZombieState.cs" />
     <Compile Include="Assets\SinuousShrooms\Scripts\CameraOrbit.cs" />
     <Compile Include="Assets\SinuousShrooms\Scripts\ConstantTransform.cs" />
     <Compile Include="Assets\SinuousShrooms\Scripts\InputTransform.cs" />
