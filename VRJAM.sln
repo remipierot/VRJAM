@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2017
+# Visual Studio 2015
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VRJAM", "VRJAM.csproj", "{77AF48A7-559B-7CB8-E2E8-977228D5B6CC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VRJAM.Editor", "VRJAM.Editor.csproj", "{1367861A-6E76-8F8C-2D63-8D146FCF9A7E}"
