@@ -11,14 +11,14 @@ public class ChickenAcceleration : MonoBehaviour {
 
 	public Vector3 StartingPoint { get; private set; }
 
-	private void Start ()
+	private void Start()
 	{
 		StartingPoint = HeadNode.localPosition;
 	}
 
-	private void Update ()
+	private void Update()
 	{
-		if (LeftCon.triggerPressed || RightCon.triggerPressed)
+		if(LeftCon.triggerPressed || RightCon.triggerPressed)
 		{
 			StartingPoint = HeadNode.localPosition;
 		}
@@ -32,7 +32,7 @@ public class ChickenAcceleration : MonoBehaviour {
 		currentDirection.y = 0.0f;
 
 		// Activate movement
-		if (currentDirection.magnitude > 0.15f && Vector3.Dot(currentHeadForward, currentDirection) > 0.0f)
+		if(currentDirection.magnitude > 0.15f && Vector3.Dot(currentHeadForward, currentDirection) > 0.0f)
 		{
 			Vector3 move = currentHeadForward.normalized * Speed * Time.deltaTime;
 			transform.position += move;

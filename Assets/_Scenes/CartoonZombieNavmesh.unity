@@ -262,85 +262,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1001 &1473328183
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4576679953795728, guid: d375bb692dd5d864085c66a1285dc4ab, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4576679953795728, guid: d375bb692dd5d864085c66a1285dc4ab, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 3.21
-      objectReference: {fileID: 0}
-    - target: {fileID: 4576679953795728, guid: d375bb692dd5d864085c66a1285dc4ab, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4576679953795728, guid: d375bb692dd5d864085c66a1285dc4ab, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4576679953795728, guid: d375bb692dd5d864085c66a1285dc4ab, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4576679953795728, guid: d375bb692dd5d864085c66a1285dc4ab, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4576679953795728, guid: d375bb692dd5d864085c66a1285dc4ab, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4576679953795728, guid: d375bb692dd5d864085c66a1285dc4ab, type: 2}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114159171011924490, guid: d375bb692dd5d864085c66a1285dc4ab,
-        type: 2}
-      propertyPath: _CurrentState
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: d375bb692dd5d864085c66a1285dc4ab, type: 2}
-  m_IsPrefabParent: 0
---- !u!1 &1911395756 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1051603307981572, guid: d375bb692dd5d864085c66a1285dc4ab,
-    type: 2}
-  m_PrefabInternal: {fileID: 1473328183}
---- !u!65 &1911395759
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1911395756}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.0692451, y: 2.3854814, z: 1.2042502}
-  m_Center: {x: -0.004610181, y: 1.0947943, z: 0.30740994}
---- !u!54 &1911395760
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1911395756}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &2016689357
 GameObject:
   m_ObjectHideFlags: 0
@@ -352,6 +273,7 @@ GameObject:
   - component: {fileID: 2016689360}
   - component: {fileID: 2016689359}
   - component: {fileID: 2016689358}
+  - component: {fileID: 2016689362}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -417,9 +339,27 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2016689357}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.03325045, y: -0.84, z: -0.43946493}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 50, y: 1, z: 50}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2016689362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2016689357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f30d4906cbaa5de4d8699143c6af9d8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnPoints:
+  - {x: -15, y: 1, z: -15}
+  - {x: -15, y: 1, z: 15}
+  - {x: 15, y: 1, z: 15}
+  - {x: 15, y: 1, z: -15}
+  ZombiePrefab: {fileID: 1051603307981572, guid: d375bb692dd5d864085c66a1285dc4ab,
+    type: 2}
