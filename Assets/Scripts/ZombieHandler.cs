@@ -13,7 +13,7 @@ public class ZombieHandler : MonoBehaviour {
 
 	private void Start()
 	{
-		_Player = GameObject.Find("Cube").transform;
+		_Player = GameObject.Find("Player").transform;
 		_AliveZombies = new List<Zombie>();
 		_DeadZombies = new List<Zombie>();
 		_SpawnTimes = new float[SpawnPoints.Length];
@@ -26,8 +26,8 @@ public class ZombieHandler : MonoBehaviour {
 
 	private void Update()
 	{
-		_PopNewZombies();
 		_RemoveDeadZombies();
+		_PopNewZombies();
 		_UpdateDestinations();
 	}
 

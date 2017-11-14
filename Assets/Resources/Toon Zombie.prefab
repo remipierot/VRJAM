@@ -99,7 +99,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4759536327520894}
-  m_Layer: 18
+  m_Layer: 19
   m_Name: Bone014_Finger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205,7 +205,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4694235268796338}
-  m_Layer: 18
+  m_Layer: 19
   m_Name: Bone009_Finger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -265,7 +265,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4164471760962402}
-  m_Layer: 18
+  m_Layer: 19
   m_Name: Bone013_Finger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -355,7 +355,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4893927623471648}
-  m_Layer: 18
+  m_Layer: 19
   m_Name: Bone015_Finger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -385,7 +385,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4018020423081942}
-  m_Layer: 18
+  - component: {fileID: 135776456713365268}
+  - component: {fileID: 114325918697946784}
+  m_Layer: 19
   m_Name: Bone003_Paw
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -595,7 +597,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4829848405952132}
-  m_Layer: 18
+  m_Layer: 19
   m_Name: Dummy010_HandR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1063,7 +1065,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1051603307981572}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 9.24, z: 0}
+  m_LocalPosition: {x: -18.16, y: 1.85, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4112555020897040}
@@ -1368,6 +1370,17 @@ Animation:
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 1
+--- !u!114 &114325918697946784
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1541555743130914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 261ef078ba067ff4992492bf0d415281, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114581861861862428
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1383,6 +1396,19 @@ MonoBehaviour:
   LegacyAnimator: {fileID: 111516093439608272}
   CurrentState: 0
   Body: {fileID: 54671979478736244}
+  MinimumAttackDistance: 3
+--- !u!135 &135776456713365268
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1541555743130914}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.333711
+  m_Center: {x: -0.32749414, y: 0.000000056037738, z: -0.000000017033512}
 --- !u!137 &137826116878459690
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -1461,7 +1487,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1051603307981572}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -1470,7 +1496,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
+  m_Height: 0.00001
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4

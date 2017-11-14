@@ -11,6 +11,9 @@ TagManager:
   - Fader
   - dontmove
   - listlast
+  - FxTemporaire
+  - Fire
+  - projectile
   layers:
   - Default
   - TransparentFX
@@ -31,7 +34,7 @@ TagManager:
   - DemoUI
   - Toys
   - Zombie
-  - 
+  - ZombieHand
   - 
   - 
   - 

@@ -19,10 +19,12 @@ public class Zombie : MonoBehaviour
 	public Animation LegacyAnimator;
 	public ZombieState CurrentState;
 	public Rigidbody Body;
+	public float MinimumAttackDistance;
 
 	private void Start()
 	{
 		Agent.destination = Vector3.zero;
+		Agent.stoppingDistance = MinimumAttackDistance;
 	}
 
 	private void Update()
@@ -33,12 +35,29 @@ public class Zombie : MonoBehaviour
 
 	private void _ComputeState()
 	{
-		Vector3 horizontalVelocity = Body.velocity;
-		horizontalVelocity.y = 0.0f;
-
-		if (horizontalVelocity.magnitude > 0.0f && CurrentState == ZombieState.IDLE)
+		if(CurrentState != ZombieState.SHOT &&
+			CurrentState != ZombieState.DYING &&
+			CurrentState != ZombieState.DEAD)
 		{
-			CurrentState = ZombieState.WALK;
+			float distanceToDestination = (Agent.destination - transform.position).magnitude;
+
+			if (distanceToDestination > MinimumAttackDistance)
+			{
+				_ChangeCurrentState(ZombieState.WALK);
+			}
+			else
+			{
+				transform.LookAt(Agent.destination);
+				_ChangeCurrentState(ZombieState.ATTACK);
+			}
+		}
+	}
+
+	private void _ChangeCurrentState(ZombieState newState)
+	{
+		if (CurrentState != newState)
+		{
+			CurrentState = newState;
 		}
 	}
 
