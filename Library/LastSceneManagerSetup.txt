@@ -1,4 +1,12 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/_Scenes/CartoonZombieNavmesh.unity
+=======
+<<<<<<< Updated upstream
+- path: Assets/_Scenes/Main.unity
+=======
+- path: Assets/_Level_Components/Room1.unity
+>>>>>>> Stashed changes
+>>>>>>> 7a35ac6f9db9d75d44ec9f21633c04ff662ed810
   isLoaded: 1
   isActive: 1
