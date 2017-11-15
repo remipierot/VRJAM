@@ -12,7 +12,11 @@ public class ZombieAttack : MonoBehaviour {
 				_Player = other.gameObject.GetComponent<Player>();
 			}
 
-			_Player.HealthPoint--;
+			if(_Player != null)
+			{
+				_Player.HealthPoint--;
+			}
+			
 		}
 	}
 }

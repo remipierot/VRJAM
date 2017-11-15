@@ -27,7 +27,7 @@ public class ZombieHandler : MonoBehaviour {
 	{
 		_RemoveDeadZombies();
 		_PopNewZombies();
-		_UpdateDestinations();
+		_UpdateZombiesDestination();
 	}
 
 	private void _PopNewZombies()
@@ -62,11 +62,11 @@ public class ZombieHandler : MonoBehaviour {
 		foreach (Zombie z in _DeadZombies)
 		{
 			_AliveZombies.Remove(z);
-			Destroy(z);
+			Destroy(z.gameObject);
 		}
 	}
 
-	private void _UpdateDestinations()
+	private void _UpdateZombiesDestination()
 	{
 		foreach (Zombie z in _AliveZombies)
 		{

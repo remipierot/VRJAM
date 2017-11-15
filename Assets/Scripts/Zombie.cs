@@ -18,6 +18,7 @@ public class Zombie : MonoBehaviour
 	public ZombieState CurrentState;
 	public Rigidbody Body;
 	public float MinimumAttackDistance;
+	public GameObject DyingExplosion;
 
 	private void Start()
 	{
@@ -74,6 +75,7 @@ public class Zombie : MonoBehaviour
 				break;
 			case ZombieState.SHOT:
 				LegacyAnimator.Play("Zombie_Death_01");
+				DyingExplosion.SetActive(true);
 				CurrentState = ZombieState.DYING;
 				break;
 			case ZombieState.DYING:
@@ -86,5 +88,18 @@ public class Zombie : MonoBehaviour
 			default:
 				break;
 		}
+	}
+
+	public void Die()
+	{
+		_ChangeCurrentState(ZombieState.SHOT);
+		Agent.isStopped = true;
+	}
+
+	public bool CanBeShot()
+	{
+		return CurrentState == ZombieState.IDLE || 
+			CurrentState == ZombieState.WALK || 
+			CurrentState == ZombieState.ATTACK;
 	}
 }
