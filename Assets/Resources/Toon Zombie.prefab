@@ -54,6 +54,7 @@ GameObject:
   - component: {fileID: 114581861861862428}
   - component: {fileID: 54671979478736244}
   - component: {fileID: 65979307802008108}
+  - component: {fileID: 82048593586921354}
   m_Layer: 18
   m_Name: Toon Zombie
   m_TagString: Untagged
@@ -1631,6 +1632,98 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.5794659, y: 2.314768, z: 1.6546161}
   m_Center: {x: 0.0044317245, y: 1.1039206, z: 0.36628842}
+--- !u!82 &82048593586921354
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1051603307981572}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 1
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 10
+  Pan2D: 0
+  rolloffMode: 2
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0.49880522
+      value: 0.9986725
+      inSlope: -2.5009959
+      outSlope: -2.5009959
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.5003983
+      value: 1
+      inSlope: -10.0039835
+      outSlope: -10.0039835
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.6490005
+      value: 0.25
+      inSlope: -0.62524897
+      outSlope: -0.62524897
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0.1
+      inSlope: -0.10003988
+      outSlope: -0.10003988
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0.16666667
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: -0.027280921
+      outSlope: -0.027280921
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!111 &111516093439608272
 Animation:
   m_ObjectHideFlags: 1
@@ -1675,8 +1768,17 @@ MonoBehaviour:
   LegacyAnimator: {fileID: 111516093439608272}
   CurrentState: 0
   Body: {fileID: 54671979478736244}
-  MinimumAttackDistance: 3
+  MinimumAttackDistance: 2
   DyingExplosion: {fileID: 1646357296001984}
+  Speed: 2
+  SoundHandler: {fileID: 82048593586921354}
+  RandomSounds:
+  - {fileID: 8300000, guid: f7e94ae0c4c504647950cde5f64170ad, type: 3}
+  - {fileID: 8300000, guid: 69e331737d60e914184749beb2b8ef38, type: 3}
+  - {fileID: 8300000, guid: 8065e368f08ef5d4db79e7856c7543ce, type: 3}
+  - {fileID: 8300000, guid: f01f187a7f26ddf4ba221ca7d87a544a, type: 3}
+  AttackSound: {fileID: 8300000, guid: b54d5fa7d65d50f46a02e4beeac3a8b7, type: 3}
+  DieSound: {fileID: 8300000, guid: 60eb917995e6375428982b178ce7fb00, type: 3}
 --- !u!135 &135776456713365268
 SphereCollider:
   m_ObjectHideFlags: 1

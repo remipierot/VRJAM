@@ -1,9 +1,13 @@
 ﻿using UnityEngine;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour {
 	private int _HealthPoint;
 	public float LastHitTime;
 	public float HitRecoverTime;
+	public TextMeshPro Text;
+	public PostProcFadeToBlack FadeHandler;
 
 	public int HealthPoint
 	{
@@ -19,8 +23,21 @@ public class Player : MonoBehaviour {
 			{
 				LastHitTime = Time.realtimeSinceStartup;
 				_HealthPoint = value;
-				Debug.LogError(_HealthPoint);
+
+				Text.text = _HealthPoint + "\nHealth";
+
+				if(_HealthPoint == 0)
+				{
+					FadeHandler.FadeOut();
+					SceneManager.LoadScene("Final");
+				}
 			}
 		}
+	}
+
+	public void Start()
+	{
+		_HealthPoint = 100;
+		Text.text = _HealthPoint + "\nHealth";
 	}
 }

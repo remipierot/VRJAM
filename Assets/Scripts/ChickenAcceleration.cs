@@ -5,6 +5,7 @@ using UnityEngine;
 public class ChickenAcceleration : MonoBehaviour {
 	public Transform HeadNode;
 	public float Speed = 2.0f;
+	public bool AllowedToMove = true;
 
 	public SteamVR_TrackedController LeftCon;
 	public SteamVR_TrackedController RightCon;
@@ -32,9 +33,9 @@ public class ChickenAcceleration : MonoBehaviour {
 		currentDirection.y = 0.0f;
 
 		// Activate movement
-		if(currentDirection.magnitude > 0.15f && Vector3.Dot(currentHeadForward, currentDirection) > 0.0f)
+		if(currentDirection.magnitude > 0.10f && Vector3.Dot(currentHeadForward, currentDirection) > 0.0f && AllowedToMove)
 		{
-			Vector3 move = currentHeadForward.normalized * Speed * Time.deltaTime;
+			Vector3 move = currentHeadForward.normalized * Speed * currentDirection.magnitude * Time.deltaTime;
 			transform.position += move;
 		}
 	}

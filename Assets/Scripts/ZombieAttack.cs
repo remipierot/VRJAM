@@ -7,7 +7,7 @@ public class ZombieAttack : MonoBehaviour {
 	{
 		if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
 		{
-			if(_Player == null)
+			if (_Player == null)
 			{
 				_Player = other.gameObject.GetComponent<Player>();
 			}
